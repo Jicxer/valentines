@@ -1,1 +1,7 @@
-
+body{
+    text-align: center;
+    margin-top: 50px;
+    background-color: #f1f1f1;
+    font-family: 'courier' cursive;
+    color: #ffd199;
+}
