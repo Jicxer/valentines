@@ -36,5 +36,6 @@ img {
 
 #valentinesQuestion {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+  text-align: center;
 }
