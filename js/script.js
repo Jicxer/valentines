@@ -49,24 +49,35 @@ const stages = [
 const angryImage = "./images/man_bowing_angry.png";
 const image = document.getElementById("valentinesImage");
 let stage = -1;
+let noCllcks = 0;
 yesbutton = document.getElementById("yes");
 nobutton = document.getElementById("no");
-
+valentinesQuestion = document.getElementById("valentinesQuestion");
 yesbutton.addEventListener("click", function() {
     location.href = "yay.html";
 });
 
 nobutton.addEventListener("click", function() {
     stage++;
+    noCllcks++;
     image.src = angryImage;
     if (stage < stages.length) {
-        document.getElementById("valentinesQuestion").innerHTML = "<b>" + stages[stage].text + "</b>";
+        valentinesQuestion.innerHTML = "<b>" + stages[stage].text + "</b>";
         yesbutton.innerHTML = stages[stage].yes;
         nobutton.innerHTML = stages[stage].no;
     }
-    if(stage === stages.length - 1) {
+    if(stage === stages.length - 2) {
         enableNoRepel();
+    }
+    if(stage === stages.length - 1) {
         yesSizeincrease();
+    }
+    if (noCllcks > stages.length + 3) {
+        yesScale = 1;
+        valentinesQuestion.innerHTML = "<b>Be my Valentines!</b>";
+        yesbutton.style.display = "large";
+        yesbutton.innerHTML = "Okay!";
+        nobutton.style.display = "none";
     }
 });
 
