@@ -92,7 +92,6 @@ function yesSizeincrease() {
         yesScale += 0.1;
         yesbutton.style.transform = `scale(${yesScale})`;
     });
-
     if (yesInterval){
         return;
     }
