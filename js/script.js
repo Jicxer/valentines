@@ -15,6 +15,31 @@ const stages = [
         no: "I'm really good, I promise."
     },
     {
+        text: "Let's pretend I didn't see that.",
+        yes: "Okay, I'll be your Valentines.",
+        no: "No, I don't want to."
+    },
+    {
+        text: "Come on. Just say yes.",
+        yes: "Fine, I'll be your Valentines.",
+        no: "No, I don't want to."
+    },
+    { 
+        text: "Remember thunderdome? That was fun.",
+        yes: "Okay, I'll be your Valentines.",
+        no: "You think I'd say yes after that?"
+    },
+    {
+        text: "Alright, I'm starting to get a little upset.",
+        yes: "Fine, I'll be your Valentines.",
+        no: "Still no."
+    },
+    {
+        text: "This is getting drawn out. Just say yes.",
+        yes: "Yes.",
+        no: "No."
+    },
+    {
         text: "I'm going to ask you one last time.",
         yes: "Yes.",
         no: "No."
@@ -41,9 +66,48 @@ nobutton.addEventListener("click", function() {
     }
     if(stage === stages.length - 1) {
         enableNoRepel();
+        yesSizeincrease();
     }
 });
 
+let yesScale = 1;
+let yesInterval = null;
+function yesSizeincrease() {
+    yesbutton = document.getElementById("yes");
+    nobutton = document.getElementById("no");
+
+    nobutton.addEventListener("click", function() {
+        yesScale += 0.1;
+        yesbutton.style.transform = `scale(${yesScale})`;
+    });
+
+    if (yesInterval){
+        return;
+    }
+    yesInterval = setInterval(function() {
+        yesScale += 0.1;
+        yesbutton.style.transform = `scale(${yesScale})`;
+    }, 1000);
+}
+
 function enableNoRepel() {
-    
+    const noButton = document.getElementById("no");
+
+    document,addEventListener("mousemove", function(event) {
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+        const buttonRect = noButton.getBoundingClientRect();
+        const buttonX = buttonRect.left + buttonRect.width / 2;
+        const buttonY = buttonRect.top + buttonRect.height / 2;
+        const distanceX = mouseX - buttonX;
+        const distanceY = mouseY - buttonY;
+        const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+        const repelDistance = 300;
+
+        if (distance < repelDistance) {
+            const repelX = (distanceX / distance) * (repelDistance - distance);
+            const repelY = (distanceY / distance) * (repelDistance - distance);
+            noButton.style.transform = `translate(${repelX}px, ${repelY}px)`;
+        }
+    });
 }
