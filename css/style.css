@@ -31,6 +31,18 @@ img {
   transition: opacity 0.3s ease;
 }
 
+#buttonRow {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+}
+
+#no {
+  position: relative;
+  transition: transform 0.1 ease-out;
+}
+
 #answerButton:hover {
   background-color: #9b3e3e;
   color: #8a5854;

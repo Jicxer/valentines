@@ -16,7 +16,7 @@ const stages = [
     },
     {
         text: "I'm going to ask you one last time.",
-        yes: "Fine.",
+        yes: "Yes.",
         no: "No."
     }
 ];
@@ -39,4 +39,11 @@ nobutton.addEventListener("click", function() {
         yesbutton.innerHTML = stages[stage].yes;
         nobutton.innerHTML = stages[stage].no;
     }
+    if(stage === stages.length - 1) {
+        enableNoRepel();
+    }
 });
+
+function enableNoRepel() {
+    
+}
