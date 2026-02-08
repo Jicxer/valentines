@@ -10,28 +10,28 @@ const stages = [
         no: "I'm good."
     },
     {
-        text:"Are you serious?",
-        yes: "Fine, I'll be your Valentines.",
-        no: "I'm really good, I promise."
+        text:"내 발렌타인이 되어줄래?",
+        yes: "진짜?",
+        no: "네."
     },
     {
-        text: "Let's pretend I didn't see that.",
-        yes: "Okay, I'll be your Valentines.",
+        text: "Let's pretend I didn't see that. I'm really trying here.",
+        yes: "Sure!",
         no: "No, I don't want to."
     },
     {
         text: "Come on. Just say yes.",
-        yes: "Fine, I'll be your Valentines.",
-        no: "No, I don't want to."
+        yes: "Why not. I'll be your Valentines.",
+        no: "🥱"
     },
     { 
         text: "Remember thunderdome? That was fun.",
-        yes: "Okay, I'll be your Valentines.",
+        yes: "...",
         no: "You think I'd say yes after that?"
     },
     {
         text: "Alright, I'm starting to get a little upset.",
-        yes: "Fine, I'll be your Valentines.",
+        yes: "I'd love to!",
         no: "Still no."
     },
     {
@@ -72,9 +72,10 @@ nobutton.addEventListener("click", function() {
     if(stage === stages.length - 1) {
         yesSizeincrease();
     }
-    if (noCllcks > stages.length + 2) {
+    if (noCllcks > stages.length + 1) {
         yesScale = 1;
         valentinesQuestion.innerHTML = "<b>Be my Valentines!</b>";
+        valentinesQuestion.classList.add("daunting");
         yesbutton.style.display = "large";
         yesbutton.innerHTML = "Okay!";
         nobutton.style.display = "none";
