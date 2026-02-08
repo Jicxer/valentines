@@ -72,7 +72,7 @@ nobutton.addEventListener("click", function() {
     if(stage === stages.length - 1) {
         yesSizeincrease();
     }
-    if (noCllcks > stages.length + 3) {
+    if (noCllcks > stages.length + 2) {
         yesScale = 1;
         valentinesQuestion.innerHTML = "<b>Be my Valentines!</b>";
         yesbutton.style.display = "large";
