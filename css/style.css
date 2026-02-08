@@ -1,9 +1,15 @@
 body{
     text-align: center;
     margin-top: 50px;
-    background-color: #f1f1f1;
+    background-color: #995959;
     font-family: 'courier' cursive;
     color: #ffd199;
+}
+img {
+  height: 400px;
+  width: auto;
+  padding: 10px;
+  background-color: #995959;
 }
 
 .answerButton {
@@ -11,12 +17,24 @@ body{
   font-size: 18px;
   cursor: pointer;
   margin: 10px;
-  font-family: "courier";
+  font-family: "courier", cursive;
   margin-bottom: 20px;
-  background-color: #ffe3e1;
-  color: #e67373;
-  border-radius: 12px;
-  border: 2px solid #ffe3e1;
-  box-shadow: 1px 1px 2px #ff9494;
+  background-color: #ffccc5;
+  color: #d85555;
+  border-radius: 15px;
+  border: 2px solid #ffccc5;
+  box-shadow: 1px 1px 2px #ff7070;
   transition: 0.3s;
+}
+
+#answerButton:hover {
+  background-color: #9b3e3e;
+  color: #8a5854;
+  border: 2px solid #ff9494;
+  box-shadow: 1px 1px 2px #8e6f6d;
+}
+
+#valentinesQuestion {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
