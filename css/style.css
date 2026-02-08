@@ -27,6 +27,8 @@ img {
   transition: 0.3s;
 }
 
+
+
 #answerButton:hover {
   background-color: #9b3e3e;
   color: #8a5854;
@@ -36,6 +38,5 @@ img {
 
 #valentinesQuestion {
   font-size: 24px;
-  margin: 0 auto 20px;
-  text-align: center;
+  margin-bottom: 20px;
 }
