@@ -27,7 +27,9 @@ img {
   transition: 0.3s;
 }
 
-
+#valentinesImage {
+  transition: opacity 0.3s ease;
+}
 
 #answerButton:hover {
   background-color: #9b3e3e;
